@@ -24,4 +24,5 @@ Requires `GIGACHAT_CREDENTIALS` in `.env` (a Base64-encoded authorization key fr
 - **No test suite or lint config exists.** Use `python -m py_compile main.py` to check syntax and `python -m pyflakes main.py` for basic linting.
 - **No build step.** The app runs directly with `python main.py`.
 - The GigaChat SDK does not validate credentials at startup — only when an actual API call is made. The app will appear to start fine with placeholder credentials.
+- The `GIGACHAT_CREDENTIALS` environment variable (injected as a secret) must be written into `.env` before running `main.py`, since the app reads credentials via `python-dotenv` from that file, not directly from the shell environment.
 - Standard commands are documented in `README.md`.
